@@ -33,7 +33,11 @@ body{
     position:relative;
     top: 0.6em;
 }
-
+.list_video_items{
+    
+    margin-top: 2em;
+       
+}
 .video-detail {
     margin: 2em auto;
 }
@@ -133,14 +137,14 @@ body{
         width: 50%;   
         float: left;
         position: relative;
-        left: 2em;
+        left: 2.2em;
     }
     
     .list_video_items{
         float: right;
         width: 40%;
         position: relative;
-        left: -2em;
+        left: -2.2em;
     }
     
     .video_item .video_item_title{
@@ -155,6 +159,16 @@ body{
     .video_item .video_item_title{
         position: relative;
         top: 1.8em;
+    }
+    
+        .video-detail {
+        
+        left: 3em;
+    }
+    
+    .list_video_items{
+        
+        left: -3em;
     }
 
 
