@@ -1,3 +1,5 @@
+See app at: http://react-youtube-video-list.surge.sh/
+
 Packages Included
 
 Build: Webpack, Babel (es2015 and React), webpack-dev-server
@@ -29,10 +31,19 @@ npm run webpack-dev-server
 
 npm run webpack:prod
 
-for github
+For production change to production branch
 git checkout production
+
+to push in the production branch in github
 git push -u origin production
 
+
+publish with:
+https://surge.sh/
+
+ npm install --global surge
+ 
+ $surge
 
 
 *Application details:
