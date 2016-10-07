@@ -29,6 +29,9 @@ npm run webpack-dev-server
 
 npm run webpack:prod
 
+for github
+git checkout production
+git push -u origin production
 
 
 
