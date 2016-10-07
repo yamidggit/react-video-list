@@ -25,6 +25,13 @@ You don't need to run webpack:watch if you are running the dev server.
 
 npm run webpack-dev-server
 
+*production
+
+npm run webpack:prod
+
+
+
+
 *Application details:
 
 A simple front-end application that uses the Youtube API to build an app that has the following workflow:

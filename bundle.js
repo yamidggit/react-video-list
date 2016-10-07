@@ -21500,13 +21500,13 @@
 	                'div',
 	                { className: 'app' },
 	                _react2.default.createElement(
-	                    'h1',
-	                    null,
-	                    this.props.name
+	                    'div',
+	                    { className: 'header-bar' },
+	                    _react2.default.createElement('img', { id: 'logo', src: '../app/images/youtube.PNG' }),
+	                    _react2.default.createElement(_search_bar2.default, { OnSearch: function OnSearch(query) {
+	                            return _this2.ApiSearch(query);
+	                        } })
 	                ),
-	                _react2.default.createElement(_search_bar2.default, { OnSearch: function OnSearch(query) {
-	                        return _this2.ApiSearch(query);
-	                    } }),
 	                _react2.default.createElement(_video_detail2.default, { video: this.state.selectedVideo }),
 	                _react2.default.createElement(_list_video_items2.default, { videos: this.state.videos,
 	                    onVideoSelect: function onVideoSelect(video) {
@@ -21521,7 +21521,6 @@
 	}(_react2.default.Component);
 
 	exports.default = App;
-	;
 
 /***/ },
 /* 174 */
@@ -22508,19 +22507,20 @@
 
 	            return _react2.default.createElement(
 	                "div",
-	                null,
-	                _react2.default.createElement("input", {
+	                { className: "search_bar" },
+	                _react2.default.createElement("input", { placeholder: "Search",
 	                    value: this.state.query,
 	                    onChange: function onChange(e) {
-	                        _this2.props.OnSearch(e.target.value);
 	                        _this2.setState({ query: e.target.value });
 	                    }
 	                }),
 	                _react2.default.createElement(
-	                    "p",
-	                    null,
-	                    "The video search is ",
-	                    this.state.query
+	                    "span",
+	                    { id: "search_button",
+	                        onClick: function onClick(e) {
+	                            _this2.props.OnSearch(_this2.state.query);
+	                        } },
+	                    _react2.default.createElement("img", { className: "img_button", src: "../app/images/search-button.PNG", height: "24px" })
 	                )
 	            );
 	        }
@@ -22577,16 +22577,12 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'list_video_items' },
-	                _react2.default.createElement(
-	                    'ul',
-	                    null,
-	                    this.props.videos.map(function (video, index) {
-	                        return _react2.default.createElement(_video_item2.default, { key: index,
-	                            video: video,
-	                            onVideoSelect: _this2.props.onVideoSelect
-	                        });
-	                    })
-	                )
+	                this.props.videos.map(function (video, index) {
+	                    return _react2.default.createElement(_video_item2.default, { key: index,
+	                        video: video,
+	                        onVideoSelect: _this2.props.onVideoSelect
+	                    });
+	                })
 	            );
 	        }
 	    }]);
@@ -22637,15 +22633,18 @@
 
 	            return _react2.default.createElement(
 	                "div",
-	                { className: "video_item" },
+	                { className: "video_item", onClick: function onClick() {
+	                        return _this2.props.onVideoSelect(_this2.props.video);
+	                    } },
 	                _react2.default.createElement(
-	                    "li",
-	                    { onClick: function onClick() {
-	                            return _this2.props.onVideoSelect(_this2.props.video);
-	                        } },
-	                    "Title: ",
-	                    this.props.video.snippet.title,
-	                    _react2.default.createElement("img", { src: this.props.video.snippet.thumbnails.default.url })
+	                    "div",
+	                    null,
+	                    _react2.default.createElement("img", { src: this.props.video.snippet.thumbnails.medium.url })
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "video_item_title" },
+	                    this.props.video.snippet.title
 	                )
 	            );
 	        }
@@ -22699,21 +22698,31 @@
 	    }, {
 	        key: "loading",
 	        value: function loading() {
-	            if (this.props.video === null) {
+	            if (!this.props.video) {
 	                return _react2.default.createElement(
 	                    "div",
-	                    null,
+	                    { className: "video-detail" },
 	                    "Video loading... "
 	                );
 	            } else {
 	                return _react2.default.createElement(
 	                    "div",
-	                    null,
+	                    { className: "video-detail" },
 	                    _react2.default.createElement("iframe", { src: this.url() }),
 	                    _react2.default.createElement(
 	                        "div",
-	                        null,
-	                        this.props.video.snippet.description
+	                        { className: "description" },
+	                        _react2.default.createElement(
+	                            "h2",
+	                            null,
+	                            this.props.video.snippet.title
+	                        ),
+	                        _react2.default.createElement("hr", null),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            this.props.video.snippet.description
+	                        )
 	                    )
 	                );
 	            }
@@ -22721,12 +22730,10 @@
 	    }, {
 	        key: "render",
 	        value: function render() {
-
 	            return _react2.default.createElement(
 	                "div",
-	                { className: "video-detail" },
-	                this.loading(),
-	                ";"
+	                null,
+	                this.loading()
 	            );
 	        }
 	    }]);
