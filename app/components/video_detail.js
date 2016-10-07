@@ -17,7 +17,8 @@ export default class VideoDeatil extends React.Component{
                     <iframe src={this.url()}></iframe>
                     <div className="description">
                         <h2>{this.props.video.snippet.title}</h2>
-                        <p>Description: {this.props.video.snippet.description}</p>
+                        <hr />
+                        <p>{this.props.video.snippet.description}</p>
                     </div>
                 </div>
             );

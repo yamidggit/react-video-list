@@ -13,8 +13,7 @@ export default class ListVideoItems extends React.Component{
                                 onVideoSelect={this.props.onVideoSelect}
                                 />
                                 
-                            )
-               }
+                    )}
                </div>
             
         );

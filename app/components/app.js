@@ -37,18 +37,20 @@ export default class App extends React.Component {
         return (
             <div className="app">
                 
-                    <h1>{this.props.name}</h1>
+                <div className="header-bar">
+                    <img  id="logo" src="../app/images/youtube.PNG" />
                     <SearchBar OnSearch={(query)=>this.ApiSearch(query)}/>
-                    <VideoDetail video={this.state.selectedVideo} />
-                
-                
-                    <ListVideoItems videos={this.state.videos}
-                            onVideoSelect={(video)=>this.setState({selectedVideo:video})}
-                    />
+                </div>
+                <VideoDetail video={this.state.selectedVideo} />
+            
+            
+                <ListVideoItems videos={this.state.videos}
+                        onVideoSelect={(video)=>this.setState({selectedVideo:video})}
+                />
               
             </div>
         );
     }
-};
+}
 
 

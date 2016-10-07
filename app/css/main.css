@@ -1,66 +1,67 @@
 body{
-    padding: 10px 10px;
+    padding: 0;
+    margin: 0;
     font-family: sans-serif;
-    
-}
-
-.app{
+    background-color: #f2f2f2;
     width: 100%;
-    text-align: center;
-    
 }
 
-.col-8{
-    width: 66%;
-    text-align: center;
-    
-    
+#logo{
+    float: left;
 }
-
-.col-3{
-    width: 25%;
-    text-align: center;
+.header-bar{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    margin-bottom: 1.5em;
+}
+.search_bar {
+    width: 50%;
+    float: left;
+    margin-top: 0.1em;
+}
+.search_bar input{
+    width:60%;
+    height: 20px;
+}
+.img_button{
+    border: 1px solid gray;
+}
+#search_button{
+    width: 20px;
+    cursor:pointer;
+    position:relative;
+    top: 0.6em;
 }
 
 .video-detail {
-    margin-top: 10px;
-    text-align: center;
-   
-    
+    margin: 2em auto;
 }
 
 .video-detail iframe{
-   
-    width: 80%;
+    width: 100%;
     height: 400px;
-    
 }
 .video-detail .description{
+    background-color: #fff;
     margin-top: 10px;
     padding: 20px 10px;
     border: solid 1px  #ddd;
     border-radius: 4px;
-    
 }
-.search_bar{
-    text-align: center;
-    padding-bottom: 10px;
-}
-.search_bar input{
-    width: 75%;
-    
-}
+
 .video_item{
-     text-align: center;
-     padding: 10px 5px;
-     border: solid 1px  #ddd;
+    background-color: #fff;
+    padding: 1em;
+    border: solid 1px  #ddd;
     border-radius: 4px;
     cursor:pointer;
     display: flex;
 }
 .video_item img{
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 150px;
+    max-height: 115px;
+    padding-right: 1em;
 }
 
 .video_item:hover{
@@ -68,3 +69,93 @@ body{
 }
 
 
+ @media screen and (max-width:550px) {
+
+    .search_bar {
+        margin-left: 2em;
+    
+    }
+    .video-detail{
+        width: 80%;
+    }
+    
+    
+    .list_video_items{
+        width: 80%;
+        margin: 2em auto;
+       
+    }
+    .video_item .video_item_title{
+        
+        position: relative;
+        top: 1.8em;
+    }
+
+ }
+ 
+ @media screen and (min-width:551px)and (max-width:769px) {
+    #logo{
+        margin-left: 3em;
+    }
+    
+    .search_bar {
+        margin-left: 2em;
+    
+    }
+    .video-detail{
+        width: 80%;
+    }
+    .list_video_items{
+        width: 80%;
+        margin: 2em auto;
+    }
+    
+    .video_item .video_item_title{
+        position: relative;
+        top: 1.8em;
+    }
+
+
+}
+
+
+ @media screen and (min-width:770px){ 
+     
+    #logo{
+        margin-left: 3em;
+    }
+    .search_bar {
+        
+        margin-left: 7em;
+    }
+    
+    .video-detail {
+        width: 50%;   
+        float: left;
+        position: relative;
+        left: 2em;
+    }
+    
+    .list_video_items{
+        float: right;
+        width: 40%;
+        position: relative;
+        left: -2em;
+    }
+    
+    .video_item .video_item_title{
+        position: relative;
+        top: 0.3em;
+    }
+
+}
+ 
+@media screen and (min-width:1000px){ 
+     
+    .video_item .video_item_title{
+        position: relative;
+        top: 1.8em;
+    }
+
+
+ } 
